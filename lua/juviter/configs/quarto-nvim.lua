@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd("BufEnter", {
   callback = function()
     if not b.quarto_activated then
       require("quarto").activate()
-      vim.cmd "MoltenImportOutput"
+      vim.cmd("MoltenImportOutput")
       b.quarto_activated = true
     end
   end,

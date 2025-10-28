@@ -19,7 +19,7 @@ else
     return {
       "3rd/image.nvim",
       lazy = true,
-      opts = require "juviter.configs.image",
+      opts = require("juviter.configs.image"),
     }
   end
 end

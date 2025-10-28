@@ -3,9 +3,9 @@ return {
     "GCBallesteros/jupytext.nvim",
     lazy = false,
     init = function()
-      require "juviter.configs.jupytext-init"
+      require("juviter.configs.jupytext-init")
     end,
-    opts = require "juviter.configs.jupytext",
+    opts = require("juviter.configs.jupytext"),
   },
   {
     "benlubas/molten-nvim",
@@ -13,7 +13,7 @@ return {
     build = ":UpdateRemotePlugins",
     lazy = true,
     config = function()
-      require "juviter.configs.molten-nvim"
+      require("juviter.configs.molten-nvim")
     end,
   },
   {
@@ -31,7 +31,7 @@ return {
     "quarto-dev/quarto-nvim",
     dependencies = { "jmbuhr/otter.nvim", "benlubas/molten-nvim" },
     lazy = true,
-    opts = require "juviter.configs.quarto-nvim",
+    opts = require("juviter.configs.quarto-nvim"),
   },
   {
     "MeanderingProgrammer/render-markdown.nvim",
