@@ -3,7 +3,7 @@ return {
     "GCBallesteros/jupytext.nvim",
     lazy = false,
     init = function()
-      require("juviter.configs.jupytext-init")
+      require("juviter.autocmds.jupytext")
     end,
     opts = require("juviter.configs.jupytext"),
   },
