@@ -17,9 +17,11 @@ return {
     end,
   },
   {
-    "nvim-treesitter/nvim-treesitter",
-    dependencies = "nvim-treesitter/nvim-treesitter-textobjects",
-    lazy = true,
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    branch = "main",
+    event = { "BufNewFile", "BufReadPost" },
+    dependencies = "nvim-treesitter/nvim-treesitter",
+    opts = require("juviter.configs.nvim-treesitter-textobjects"),
   },
   {
     "jmbuhr/otter.nvim",

@@ -132,6 +132,52 @@ It may be possible in the future when [image.nvim can handle sixel](https://gith
     { "<leader>ri", ":noautocmd MoltenInterrupt<CR>", silent = true, desc = "Juviter Send a keyboard interrupt" },
     { "<leader>ro", ":noautocmd MoltenEnterOutput<CR>", silent = true, desc = "Juviter Open output window" },
     { "<leader>nj", "<cmd>NewNotebook<CR>", silent = true, desc = "Juviter Create a new notebook" },
+    {
+      mode = { "x", "o" },
+      "ib",
+      function()
+        require("nvim-treesitter-textobjects.select").select_textobject("@code_cell.inner", "textobjects")
+      end,
+      desc = "Textobjects Code Cell Select In Block",
+    },
+    {
+      mode = { "x", "o" },
+      "ab",
+      function()
+        require("nvim-treesitter-textobjects.select").select_textobject("@code_cell.outer", "textobjects")
+      end,
+      desc = "Textobjects Code Cell Select Around Block",
+    },
+    {
+      "<leader>sbl",
+      function()
+        require("nvim-treesitter-textobjects.swap").swap_next("@code_cell.outer")
+      end,
+      desc = "Textobjects Code Cell Swap Next",
+    },
+    {
+      "<leader>sbh",
+      function()
+        require("nvim-treesitter-textobjects.swap").swap_previous("@code_cell.outer")
+      end,
+      desc = "Textobjects Code Cell Swap Previous",
+    },
+    {
+      mode = { "n", "x", "o" },
+      "]b",
+      function()
+        require("nvim-treesitter-textobjects.move").goto_next_start("@code_cell.inner", "textobjects")
+      end,
+      desc = "Textobjects Code Cell Move To Next Code Block",
+    },
+    {
+      mode = { "n", "x", "o" },
+      "[b",
+      function()
+        require("nvim-treesitter-textobjects.move").goto_next_start("@code_cell.inner", "textobjects")
+      end,
+      desc = "Textobjects Code Cell Move To Previous Code Block",
+    },
   },
 }
 ```
